@@ -21,9 +21,9 @@ node.js + express, React, MySQL, Sequelize
 
 ## Запуск
 Открыть терминал и перейти в папку backend ~ "cd backend" <br>
-Установите пакеты ~ "npm install" <br>
+Установить пакеты ~ "npm install" <br>
 Запустить сервер ~ "npm run dev"
 
 Открыть терминал и перейти в папку frontend ~ "cd frontend" <br>
-Установите пакеты ~ "npm install" <br>
+Установить пакеты ~ "npm install" <br>
 Запустить клиент ~ "npm start"
