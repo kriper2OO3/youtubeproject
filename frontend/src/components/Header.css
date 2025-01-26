@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 20px;
+}
+
+.header_logo {
+    margin-left: 10%;
+    left: 120px;
+}
+
+.header_left {
+    display: flex;
+    align-items: center;
+}
