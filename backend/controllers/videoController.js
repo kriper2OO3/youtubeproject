@@ -3,6 +3,7 @@ const {Video} = require('../models/Video')
 const Uuid = require('uuid')
 const fs = require('fs')
 const {User} = require('../models/User')
+const pathlib = require('path')
 
 class VideoController {
     async getVideos(req, res, next){
@@ -64,8 +65,10 @@ class VideoController {
             const previewFile = req.files.preview
             const path = Uuid.v4()
             const video = await Video.create({name, description, path, idCreator})
-            videoFile.mv(process.env.VIDEOSPATH + "\\" + path + ".mp4")
-            previewFile.mv(process.env.PREVIEWPATH + "\\" + path + ".png")
+            const videoPath = pathlib.join(process.env.VIDEOSPATH, `${path}.mp4`)
+            const previewPath = pathlib.join(process.env.PREVIEWPATH, `${path}.png`)
+            await videoFile.mv(videoPath)
+            await previewFile.mv(previewPath)
             return res.json({message: "Видео было успешно загружено"})
         } catch (e) {
             console.log(e)
